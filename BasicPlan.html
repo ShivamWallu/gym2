@@ -28,8 +28,8 @@
         .container {
             flex: 1; /* Allow the container to grow and occupy remaining vertical space. */
             max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
+            margin: 10px auto;
+            padding: 10px;
             background-color: #fff;
             box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
         }
@@ -57,6 +57,32 @@
             background-color: #333;
             color: #fff;
         }
+        .girl {
+            text-align: center; /* Center the content horizontally */
+        }
+
+        .girl h2 {
+            margin-bottom: 20px; /* Add spacing below the heading */
+        }
+
+        /* Style the videos if needed */
+        .girl video {
+            width: 300px;
+            height: 170px;
+        }
+        p {
+           color: black;
+           font-size: 20px;
+        }
+        .container h2{
+            text-align: center;
+            /* background-color: #333; */
+            background-color: #00abef;
+            /* color: #fff; */
+            color: #000;
+            padding: 10px;
+            margin: 0;
+        }
 
         /* Media query for phones */
         @media (max-width < 600px) {
@@ -80,6 +106,14 @@
                 bottom: -180%;
                 width: 100%;
             }
+            .girl video {
+                width: 100%;
+                height: auto;
+            }
+            /* p {
+                font-size: 200px;
+            }
+             */
 
         }
 
@@ -162,6 +196,116 @@
             </ul>
         </div><br><br>
 
+        <div class="girl">
+
+            <h2>Best Workout At Home and Gym Video:</h2><br>
+
+            <video     controls>
+                <source src="./assets/girl1.webm" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <video    controls>
+                <source src="./assets/girl2.webm" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <video    controls>
+                <source src="./assets/girl3.webm" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <video    controls>
+                <source src="./assets/girl4.webm" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <video    controls>
+                <source src="./assets/girl5.webm" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <video    controls>
+                <source src="./assets/girl6.webm" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <video    controls>
+                <source src="./assets/girl7.webm" type="video/mp4">
+                Your browser does not support the video tag.
+            </video> 
+            <video    controls>
+                <source src="./assets/girl8.webm" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <video    controls>
+                <source src="./assets/girl9.webm" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <video    controls>
+                <source src="./assets/girl10.webm" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <video    controls>
+                <source src="./assets/girl11.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <video    controls>
+                <source src="./assets/girl12.webm" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+
+            <!-- <video    controls>
+                <source src="./assets/girl13.webm" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <video    controls>
+                <source src="./assets/back7.webm" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <video    controls>
+                <source src="./assets/back8.webm" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <video    controls>
+                <source src="./assets/back4.webm" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+
+            <video    controls>
+                <source src="./assets/leg1.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <video    controls>
+                <source src="./assets/leg2.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <video    controls>
+                <source src="./assets/leg4.webm" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <video    controls>
+                <source src="./assets/leg7.webm" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <video    controls>
+                <source src="./assets/shoulder2.webm" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <video    controls>
+                <source src="./assets/shoulder3.webm" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <video    controls>
+                <source src="./assets/back4.webm" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <video    controls>
+                <source src="./assets/back2.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <video    controls>
+                <source src="./assets/shoulder6.webm" type="video/mp4">
+                Your browser does not support the video tag.
+            </video> -->
+
+        </div><br><br>
+
+
 
         <div class="day">
             <h1>Additional Tips:</h1>
@@ -181,6 +325,28 @@
         &copy; 2023 YourFitnessWebsite.com
     </footer>
     <script src="script.js"></script>
+
+
+
+    <!-- <script>
+        // Function to handle going back in history
+    function handleBack() {
+      // Redirect to index.html when going back
+      window.location.href = 'index.html';z
+    }
+
+    // Listen for the popstate event (user navigating through history)
+    window.addEventListener('popstate', function(event) {
+      // Redirect to index.html if the state has changed
+      handleBack();
+    });
+
+    // Update the history state
+    history.pushState(null, null, window.location.href);
+
+    // Ensure the user is redirected if they attempt to go back
+    handleBack();
+    </script> -->
 
 </body>
 </html>

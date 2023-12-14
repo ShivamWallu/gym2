@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Physical Fitness</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+        }
+
+        header {
+            background: linear-gradient(45deg, #3498db, #e74c3c);
+            color: #fff;
+            text-align: center;
+            padding: 1em 0;
+            border-bottom: 5px solid #2c3e50;
+        }
+
+        section {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2 {
+            color: #2c3e50;
+        }
+
+        p {
+            line-height: 1.5;
+            color: #555;
+        }
+
+        .exercise {
+            margin-bottom: 30px;
+        }
+
+        video {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        video:hover {
+            transform: scale(1.05);
+        }
+
+        @media only screen and (max-width: 600px) {
+            section {
+                padding: 15px;
+            }
+
+            video {
+                height: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Fitness Exercise Videos</h1>
+    </header>
+
+    <section>
+        <div class="exercise">
+            <h2>Exercise 1</h2>
+            <video controls>
+                <source src="./assets/girl7.webm" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+
+        <div class="exercise">
+            <h2>Exercise 2</h2>
+            <video controls>
+                <source src="./assets/leg1.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+
+        <div class="exercise">
+            <h2>Exercise 3</h2>
+            <video controls>
+                <source src="./assets/abs2.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+
+        <div class="exercise">
+            <h2>Exercise 4</h2>
+            <video controls>
+                <source src="./assets/bicep1.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+
+        <div class="exercise">
+            <h2>Exercise 5</h2>
+            <video controls>
+                <source src="./assets/girl8.webm" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </section>
+
+</body>
+</html>

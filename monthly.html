@@ -22,11 +22,12 @@
         }
         .container {
             max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
+            margin: 10px auto;
+            padding: 10px;
             background-color: #fff;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
         }
         h2 {
             font-size: 24px;
@@ -56,11 +57,23 @@
         .rest-day {
             color: #888;
         }
+        /* video {
+            width: 300px;
+            height: 170px;
+        } */
+        video {
+                width: 100%; /* Make the video element full-width on smaller screens */
+                height: auto; /* Maintain the aspect ratio */
+            }
 
         /* Responsive Design */
-        @media (max-width: 768px) {
+        @media (max-width < 600px) {
             h2 {
                 font-size: 20px;
+            }
+            video {
+                width: 100%; /* Make the video element full-width on smaller screens */
+                height: auto; /* Maintain the aspect ratio */
             }
         }
     </style>
@@ -76,12 +89,12 @@
                 <th>Reps</th>
             </tr>
             <tr>
-                <td>Bench Press</td>
+                <td>Wide Grip Chest Press</td>
                 <td>3</td>
                 <td>10-12</td>
             </tr>
             <tr>
-                <td>Incline Dumbbell Press</td>
+                <td>Incline Bench Press</td>
                 <td>3</td>
                 <td>10-12</td>
             </tr>
@@ -91,37 +104,43 @@
                 <td>10-12</td>
             </tr>
             <tr>
-                <td>Push-Up</td>
+                <!-- <td>Push-Up</td> -->
+                <td>Inclined Dumbbell press</td>
                 <td>3</td>
                 <td>10-12</td>
             </tr>
             <tr>
-                <td>Dumbbell Pullovers</td>
+                <td>Cable Chest Flys</td>
+                <td>3</td>
+                <td>10-12</td>
+            </tr>
+            <tr>
+                <td>Over Head Dumble Fly on Bench</td>
                 <td>3</td>
                 <td>10-12</td>
             </tr>
         </table><br>
-        <video width="260" height="150" controls>
+        <video   controls>
             <source src="./assets/chest1.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
-        <video width="260" height="150" controls>
+        <video   controls>
             <source src="./assets/chest2.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
-        <video width="260" height="150" controls>
+        <video   controls>
             <source src="./assets/chest4.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
-        <video width="260" height="150" controls>
+        <video   controls>
             <source src="./assets/chest5.webm" type="video/mp4">
             Your browser does not support the video tag.
         </video>
-        <video width="260" height="150" controls>
+        <video   controls>
             <source src="./assets/chest6.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
-        <video width="260" height="150" controls>
+        <video   controls>
             <source src="./assets/chest7.webm" type="video/mp4">
             Your browser does not support the video tag.
         </video>
@@ -136,17 +155,12 @@
                 <th>Reps</th>
             </tr>
             <tr>
-                <td>Pull-Ups or Lat Pulldowns</td>
+                <td>Lat Pulldowns Front Side</td>
                 <td>3</td>
                 <td>10-12</td>
             </tr>
             <tr>
-                <td>Barbell Rows</td>
-                <td>3</td>
-                <td>10-12</td>
-            </tr>
-            <tr>
-                <td>Face Pulls</td>
+                <td>Lat Pulldowns Back Side</td>
                 <td>3</td>
                 <td>10-12</td>
             </tr>
@@ -156,41 +170,51 @@
                 <td>10-12</td>
             </tr>
             <tr>
-                <td>Deadlifts</td>
+                <td>Dumbbell Rows</td>
+                <td>3</td>
+                <td>10-12</td>
+            </tr>
+            <tr>
+                <td>Pull-Ups</td>
+                <td>3</td>
+                <td>10-12</td>
+            </tr>
+            <tr>
+                <td>Slow Push-Ups</td>
                 <td>3</td>
                 <td>10-12</td>
             </tr>
         </table><br>
 
-        <video width="260" height="150" controls>
+        <video   controls>
             <source src="./assets/back1.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
-        <video width="260" height="150" controls>
+        <video   controls>
             <source src="./assets/back2.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
-        <video width="260" height="150" controls>
+        <video   controls>
             <source src="./assets/back3.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
-        <video width="260" height="150" controls>
+        <video   controls>
             <source src="./assets/back4.webm" type="video/mp4">
             Your browser does not support the video tag.
         </video>
-        <video width="260" height="150" controls>
+        <video   controls>
             <source src="./assets/back5.webm" type="video/mp4">
             Your browser does not support the video tag.
         </video>
-        <video width="260" height="150" controls>
+        <video   controls>
             <source src="./assets/back6.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
-        <!-- <video width="260" height="150" controls>
+        <!-- <video   controls>
             <source src="./assets/back7.webm" type="video/mp4">
             Your browser does not support the video tag.
         </video>
-        <video width="260" height="150" controls>
+        <video   controls>
             <source src="./assets/back8.webm" type="video/mp4">
             Your browser does not support the video tag.
         </video> -->
@@ -204,12 +228,8 @@
                 <th>Reps</th>
             </tr>
             <tr>
-                <td>Squats (Barbell or Dumbbell)</td>
-                <td>3</td>
-                <td>10-12</td>
-            </tr>
-            <tr>
-                <td>Leg Press</td>
+                <!-- <td>Squats (Barbell or Dumbbell)</td> -->
+                <td>Stairs</td>
                 <td>3</td>
                 <td>10-12</td>
             </tr>
@@ -219,37 +239,47 @@
                 <td>10-12</td>
             </tr>
             <tr>
-                <td>Leg Curls</td>
+                <td>Back Squats (Barbell or Dumbbell)</td>
                 <td>3</td>
                 <td>10-12</td>
             </tr>
             <tr>
-                <td>Calf Raises</td>
+                <td>Bench press</td>
+                <td>3</td>
+                <td>10-12</td>
+            </tr>
+            <tr>
+                <td>Leg Extensions</td>
+                <td>3</td>
+                <td>10-12</td>
+            </tr>
+            <tr>
+                <td>Hamstring Curls</td>
                 <td>3</td>
                 <td>10-12</td>
             </tr>
         </table><br>
-        <video width="260" height="150" controls>
+        <video   controls>
             <source src="./assets/leg1.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
-        <video width="260" height="150" controls>
+        <video   controls>
             <source src="./assets/leg2.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
-        <video width="260" height="150" controls>
+        <video   controls>
             <source src="./assets/leg3.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
-        <video width="260" height="150" controls>
+        <video   controls>
             <source src="./assets/leg4.webm" type="video/mp4">
             Your browser does not support the video tag.
         </video>
-        <video width="260" height="150" controls>
+        <video   controls>
             <source src="./assets/leg5.webm" type="video/mp4">
             Your browser does not support the video tag.
         </video>
-        <video width="260" height="150" controls>
+        <video   controls>
             <source src="./assets/leg6.webm" type="video/mp4">
             Your browser does not support the video tag.
         </video>
@@ -262,12 +292,12 @@
                 <th>Reps</th>
             </tr>
             <tr>
-                <td>Military Press (Overhead Press)</td>
+                <td>Shoulder Dumbbell Press</td>
                 <td>3</td>
                 <td>10-12</td>
             </tr>
             <tr>
-                <td>Lateral Raises</td>
+                <td>Side Lateral Raises</td>
                 <td>3</td>
                 <td>10-12</td>
             </tr>
@@ -277,7 +307,7 @@
                 <td>10-12</td>
             </tr>
             <tr>
-                <td>Shrugs</td>
+                <td>Cable push On the Face</td>
                 <td>3</td>
                 <td>10-12</td>
             </tr>
@@ -286,29 +316,34 @@
                 <td>3</td>
                 <td>10-12</td>
             </tr>
+            <tr>
+                <td>Roap</td>
+                <td>3</td>
+                <td>10-12</td>
+            </tr>
         </table><br>
 
-        <video width="260" height="150" controls>
+        <video   controls>
             <source src="./assets/shoulder1.webm" type="video/mp4">
             Your browser does not support the video tag.
         </video>
-        <video width="260" height="150" controls>
+        <video   controls>
             <source src="./assets/shoulder2.webm" type="video/mp4">
             Your browser does not support the video tag.
         </video>
-        <video width="260" height="150" controls>
+        <video   controls>
+            <source src="./assets/shoulder7.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <video   controls>
             <source src="./assets/shoulder3.webm" type="video/mp4">
             Your browser does not support the video tag.
         </video>
-        <video width="260" height="150" controls>
+        <video   controls>
             <source src="./assets/shoulder4.webm" type="video/mp4">
             Your browser does not support the video tag.
         </video>
-        <video width="260" height="150" controls>
-            <source src="./assets/shoulder5.webm" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-        <video width="260" height="150" controls>
+        <video   controls>
             <source src="./assets/shoulder6.webm" type="video/mp4">
             Your browser does not support the video tag.
         </video>
@@ -321,54 +356,59 @@
                 <th>Reps</th>
             </tr>
             <tr>
-                <td>Bicep Curls (Barbell or Dumbbell)</td>
+                <td>Barbell Curls On Striaght Road</td>
                 <td>3</td>
                 <td>10-12</td>
             </tr>
             <tr>
-                <td>Hammer Curls</td>
+                <td>Alternate Dumbbell Curl</td>
                 <td>3</td>
                 <td>10-12</td>
             </tr>
             <tr>
-                <td>Preacher Curls</td>
+                <td>Hammer Curls Dumbbell</td>
                 <td>3</td>
                 <td>10-12</td>
             </tr>
             <tr>
-                <td>Concentration Curls</td>
+                <td>Barbell Curls On Zig-Zag Road</td>
                 <td>3</td>
                 <td>10-12</td>
             </tr>
             <tr>
-                <td>Standing Alternating Dumbbell Curls</td>
+                <td>Preacher Curl</td>
+                <td>3</td>
+                <td>10-12</td>
+            </tr>
+            <tr>
+                <td>Concentration Curl</td>
                 <td>3</td>
                 <td>10-12</td>
             </tr>
         </table><br>
 
-        <video width="260" height="150" controls>
+        <video   controls>
             <source src="./assets/bicep1.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
-        <video width="260" height="150" controls>
+        <video   controls>
             <source src="./assets/bicep2.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
-        <video width="260" height="150" controls>
+        <video   controls>
             <source src="./assets/bicep3.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
-        <video width="260" height="150" controls>
+        <video   controls>
             <source src="./assets/bicep4.webm" type="video/mp4">
             Your browser does not support the video tag.
         </video>
-        <video width="260" height="150" controls>
-            <source src="./assets/bicep6.mp4" type="video/mp4">
+        <video   controls>
+            <source src="./assets/bicep5.webm" type="video/mp4">
             Your browser does not support the video tag.
         </video>
-        <video width="260" height="150" controls>
-            <source src="./assets/bicep5.webm" type="video/mp4">
+        <video   controls>
+            <source src="./assets/bicep7.webm" type="video/mp4">
             Your browser does not support the video tag.
         </video>
                  
@@ -380,22 +420,27 @@
                 <th>Reps</th>
             </tr>
             <tr>
-                <td>Tricep Dips</td>
+                <td>Rope Pushdowns</td>
                 <td>3</td>
                 <td>10-12</td>
             </tr>
             <tr>
-                <td>Skull Crushers (Tricep Extensions)</td>
+                <td>Over Head Dumbbell With Singl Hand</td>
                 <td>3</td>
                 <td>10-12</td>
             </tr>
             <tr>
-                <td>Close-Grip Bench Press</td>
+                <td>Tricep Pushdowns Dumbbell Single Hand</td>
                 <td>3</td>
                 <td>10-12</td>
             </tr>
             <tr>
-                <td>Tricep Pushdowns</td>
+                <td>Dips</td>
+                <td>3</td>
+                <td>10-12</td>
+            </tr>
+            <tr>
+                <td>Bar Dip or Dip Machine</td>
                 <td>3</td>
                 <td>10-12</td>
             </tr>
@@ -406,27 +451,27 @@
             </tr>
         </table><br>
 
-        <video width="260" height="150" controls>
+        <video   controls>
             <source src="./assets/tricep1.webm" type="video/mp4">
             Your browser does not support the video tag.
         </video>
-        <video width="260" height="150" controls>
+        <video   controls>
             <source src="./assets/tricep2.webm" type="video/mp4">
             Your browser does not support the video tag.
         </video>
-        <video width="260" height="150" controls>
+        <video   controls>
             <source src="./assets/tricep3.webm" type="video/mp4">
             Your browser does not support the video tag.
         </video>
-        <video width="260" height="150" controls>
+        <video   controls>
             <source src="./assets/tricep5.webm" type="video/mp4">
             Your browser does not support the video tag.
         </video>
-        <video width="260" height="150" controls>
+        <video   controls>
             <source src="./assets/tricep6.webm" type="video/mp4">
             Your browser does not support the video tag.
         </video>
-        <video width="260" height="150" controls>
+        <video   controls>
             <source src="./assets/tricep4.webm" type="video/mp4">
             Your browser does not support the video tag.
         </video>

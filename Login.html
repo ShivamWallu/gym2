@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Login & Signup Form | Mr Code Box</title>
+        <link rel="stylesheet" href="login.css" />
+    
+</head>
+
+  <body>
+    <section class="wrapper">
+      <div class="form signup">
+        <header>Signup</header>
+        <form method="POST" id="form">
+          <input type="text" id="name" name="name" placeholder="Full name" required />
+          <input type="email"id="email" name="email" placeholder="Email address" required />
+          <input type="password" id="password" name="password" placeholder="Password" required />
+          <div class="checkbox">
+            <input type="checkbox" id="signupCheck" required/>
+            <label for="signupCheck">I accept all terms & condition</label>
+          </div>
+          <input type="submit" value="Submit" id="Signup" name="btn" onclick="handleSignup()" />
+          <!-- <button type="button" value="Submit" id="Signup" name="btn">submit</button> -->
+        </form>
+      </div>
+
+
+
+        <!-- <form action="#">
+          <input type="text" id="name" placeholder="Email address" required />
+          <input type="password" id="password" placeholder="Password" required />
+          <a href="#">Forgot Password</a>
+          <input type="submit" value="Login" />
+        </form> -->
+
+
+
+<!-- 
+      <div class="form login">
+        <header id="loginbtn">Login</header>       
+        <form id="loginForm" onsubmit="checkLogin(event)">
+          <input type="text" id="loginName" placeholder="name" required />
+          <input type="password" id="loginPassword" placeholder="Password" required />
+          <a href="#">Forgot Password</a>
+          <input type="submit" id="Login"/>
+        </form>
+      </div> -->
+
+      <div class="form login">
+        <header id="loginbtn">Login</header>       
+        <form id="loginForm">
+          <input type="text" id="loginName" placeholder="name" required />
+          <input type="password" id="loginPassword" placeholder="Password" required />
+          <a href="#">Forgot Password</a>
+          <button type="button" onclick="checkLogin()">Login</button>
+        </form>
+      </div>
+
+    </section>
+
+    <!-- <script src="script.js"></script> -->
+
+<script>
+
+        const wrapper = document.querySelector(".wrapper"),
+          signupHeader = document.querySelector(".signup header"),
+          loginHeader = document.querySelector(".login header");
+
+        loginHeader.addEventListener("click", () => {
+          wrapper.classList.add("active");
+        });
+        signupHeader.addEventListener("click", () => {
+          wrapper.classList.remove("active");
+        });
+
+
+ 
+
+
+function handleSignup() {
+    // Get user input
+    const nameInput = document.getElementById('name');
+    const emailInput = document.getElementById('email');
+    const passwordInput = document.getElementById('password');
+    const acceptedTermsCheckbox = document.getElementById('signupCheck');
+
+    const name = nameInput.value;
+    const email = emailInput.value;
+    const password = passwordInput.value;
+    const acceptedTerms = acceptedTermsCheckbox.checked;
+
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    // Validate user input
+    if (validateInput(name, email, password, acceptedTerms, emailPattern)) {
+        const formData = {
+            name,
+            email,
+            password,
+            acceptedTerms
+        };
+        // Store the form data in local storage
+        localStorage.setItem('formData', JSON.stringify(formData));  
+              
+        // Log the form data
+        //console.log('Form Data:', formData);
+        
+        try {
+            storeFormData(formData);
+
+            alert(`You have successfully signed up, "${name}". You are now logged in.`);
+
+            wrapper.classList.add("active");            
+        } catch (error) {
+            alert('An error occurred while storing your data. Please try again later.');
+        }
+    }
+
+}
+
+function validateInput(name, email, password, acceptedTerms, emailPattern) {
+    if (name === '' || email === '' || password === '') {
+        alert('Please fill in all the required fields.');
+        return false;
+    }
+
+    if (!acceptedTerms) {
+        alert('Please accept the terms.');
+        return false;
+    }
+
+    if (!email.match(emailPattern)) {
+        alert('Please enter a valid email address.');
+        return false;
+    }
+
+    return true;
+}
+function storeFormData(formData) {
+    const expirationDate = new Date();
+    expirationDate.setFullYear(expirationDate.getFullYear() + 10);
+    const formDataJson = JSON.stringify(formData);
+    const cookieString = `formData=${encodeURIComponent(formDataJson)}; expires=${expirationDate.toUTCString()}; path=/`;
+    document.cookie = cookieString;
+}
+
+
+
+function checkLogin() {
+  // Prevent the default form submission behavior
+  // Retrieve user input
+  const loginName = document.getElementById('loginName').value;
+  const loginPassword = document.getElementById('loginPassword').value;
+
+  // Retrieve stored form data from cookies
+  const storedFormData = getStoredFormData();
+
+  // Check if stored data is available
+  if (storedFormData) {
+    // Extract stored credentials
+    const storedName = storedFormData.name;
+    const storedPassword = storedFormData.password;
+
+    // Check if entered credentials match stored credentials
+    if (loginName === storedName && loginPassword === storedPassword)   {
+     
+      const buttonId = getButtonIdFromCookie();
+
+      // Display a success message (optional)
+      alert('Login was successful!');
+
+        // Redirect based on the buttonId value
+      switch (buttonId) {
+        case 'join':
+          window.location.href = 'index.html';
+          break;
+        case 'basic':
+          window.location.href = 'BasicPlan.html';
+          break;
+        case 'weekly':
+          window.location.href = 'weekly.html';
+          break;
+        case 'monthly':
+          window.location.href = 'monthly.html';
+          break;
+        case 'Fat_lose':
+          window.location.href = 'LossWeight.html';
+          break;
+        case 'Weight_Gain':
+          window.location.href = 'WeightGain.html';
+          break;
+        default:
+          // Handle other cases or provide a default action
+          break;
+      }     
+             
+    } else {
+      // Display an alert for invalid login credentials
+      alert('Invalid name or password. Please try again.');
+    }
+  } else {
+    // Display an alert if no stored data is found
+    alert('No stored data found. Please sign up first.');
+  }
+}
+
+
+
+// Function to retrieve stored form data from cookies
+function getStoredFormData() {
+  const cookies = document.cookie.split(';').map(cookie => cookie.split('='));
+  const formDataCookie = cookies.find(cookie => cookie[0].trim() === 'formData');
+
+  if (formDataCookie) {
+    const formDataJson = decodeURIComponent(formDataCookie[1]);
+    return JSON.parse(formDataJson);
+  }
+
+  return null;
+}
+
+// Function to retrieve buttonId from the cookie
+function getButtonIdFromCookie() {
+  const cookies = document.cookie.split(';');
+  for (const cookie of cookies) {
+    const [name, value] = cookie.trim().split('=');
+    if (name === 'buttonId') {
+      return value;
+    }
+  }
+  return null; // Return null if buttonId is not found
+}
+
+
+
+  let url='https://script.google.com/macros/s/AKfycbw71BT4nNdIBgamAO_xp_ZhmYAT41CiaUy-sCuwu6wxvQdvIRLFglcJyPg1wJiBZx38/exec'
+  let form = document.querySelector('#form');
+  form.addEventListener("submit",(e)=>{
+    let d=new FormData(form);
+    fetch(url,{
+      method: "POST",
+      body: d 
+    }).then((res)=>res.text())
+    .then((finalRes)=>console.log(finalRes))
+    form.reset();
+    e.preventDefault();
+
+  })
+
+</script>
+
+  </body>
+</html>
+
+
+
+
+
+
+
+
+

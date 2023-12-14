@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <!-- Link to Font Awesome for icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+/* GENERAL */
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'poppins', sans-serif;
+}
+
+
+    .form {
+      position: absolute;
+      top: 95%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+.container{
+  width: 100%;
+  height: 100vh;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* margin-bottom: 50px;
+  margin-top: -80px; */
+  
+}
+form{
+  background-color: rgb(203, 255, 255);
+  display: flex;
+  flex-direction: column;
+  padding: 2vw 4vw;
+  width: 90%;
+  max-width: 600px;
+  border-radius: 10px;
+  border: 1px solid black;
+
+}
+form h3{
+color: #000000;
+font-weight: 800;
+margin-bottom: 20px;
+}
+form input, form textarea{
+  border: 0;
+  margin: 10px 0;
+  padding: 20px;
+  outline: none;
+  background:white;
+  font-size: 16px;
+  padding-inline-start: 40px;  
+
+}
+form button{
+  padding: 15px;
+  background: rgb(22, 189, 255);
+  color: rgb(0, 0, 0);
+  font-size: 18px;
+  border: 0;
+  outline: none;
+  cursor: pointer;
+  width: 150px;
+  margin: 20px auto 0;
+  border-radius: 30px;
+  border: 1px solid black;
+
+}
+.container input{
+  border-radius: 10px;
+  border: 1px solid black; 
+}
+.container textarea{
+  border-radius: 10px;
+  border: 1px solid black; 
+}
+
+
+
+/* ICONS  */
+
+.input-icon i {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 10px;
+  font-size: 18px;
+  color: #000000;
+  margin-right: 2px;
+}
+.input-icon {
+  position: relative;
+}
+.input-icon input{
+  width: 100%;
+}
+.icon-textarea textarea{
+  width: 100%;
+}
+
+.icon-textarea {
+  position: relative;
+}
+
+.icon-textarea i {
+  position: absolute;
+  top: 25%;
+  left: 10px;
+  transform: translateY(-50%);
+  color: #000000; /* Icon color */
+  font-size: 16px; /* Adjust the font size as needed */
+}
+
+#message {
+  padding-left: 40px; /* Adjust this value to make room for the icon */
+}
+
+
+#about{
+  margin-bottom: 250px;
+}
+
+
+
+
+
+
+
+
+/* photo styling */
+/* Media query for screens with a width of 600 pixels or less (typical phones) */
+@media (max-width: 600px) {
+  .image-container {
+    margin-top: 20px; /* Add top margin on smaller screens */
+  }
+}
+
+body {
+
+  text-align: center;
+  height: 100vh;
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+
+}
+.header {
+  font-size: 28px;
+  font-weight: bold;
+  text-align: center;
+  color: #333;
+  padding: 20px;
+  background-color: #f1f1f1;
+  border-bottom: 2px solid #ddd;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.header::before {
+  content: "\2022"; /* Unicode character for a bullet point */
+  font-size: 32px;
+  margin-right: 10px;
+  color: #3498db; /* Change the color to your preference */
+}
+
+    .image-container {
+      width: 260px; /* Set a fixed width for the container */
+      height: 260px; /* Set a fixed height for the container */
+      margin: auto; /* Center horizontally */
+      overflow: hidden;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+      position: relative;
+    }
+
+    .image-container::before {
+      content: "";
+      display: block;
+      padding-top: 100%; /* Maintain aspect ratio for circular frame */
+    }
+
+    .image-container img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* Ensure the image covers the entire container */
+      border-radius: 50%;
+      clip-path: circle(50% at center); /* Apply circular mask */
+    }
+    .trainer-text {
+      display: inline-block;
+      margin-top: 14px;
+
+    }
+
+    
+    .image-container:hover {
+      transform: scale(1.1);
+    }
+
+
+    </style>
+</head>
+<body>
+  <div class="header">Contact Us</div>
+
+  <div class="image-container" onclick="zoomImage()" style="background-image: url('Mypic2.jpg');">
+    <img src="Mypic2.jpg" alt="Your Photo">
+    </div>
+  
+    <div class="trainer-text" id="gymTrainerText">Gym Trainer</div>
+    
+
+    <div class="container">
+        <form class="form" action="#">
+            <h3>Contact Us</h3>
+            <div class="input-icon">
+                <i class="fas fa-user"></i>
+                <input type="text" id="name" placeholder="Your name" required>
+            </div>
+            <div class="input-icon">
+                <i class="fas fa-envelope"></i>
+                <input type="email" id="email" placeholder="Your email" required>
+            </div>
+            <div class="input-icon">
+                <i class="fas fa-phone"></i>
+                <input type="tel" id="phone" placeholder="Your phone" required>
+            </div>
+            <div class="icon-textarea">
+                <i class="fas fa-comment"></i>
+                <textarea id="message" rows="4" placeholder="How can we help you" required></textarea>
+            </div>
+            <button type="button" onclick="Send()">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        function Send() {
+        var name = document.getElementById("name").value;
+        var email = document.getElementById("email").value;
+        var phone = document.getElementById("phone").value;
+        var message = document.getElementById("message").value;
+
+        var body1 = "<b>Name -- " + name + "<br/> Email -- " + email + "<br/> Contact Number -- " +
+            phone + "<br/> Message -- " + message;
+
+        var body = "<b>Name -- " + name + "<br/> Email -- " + email + "<br/> Contact Number -- " +
+            phone + "<br/> Message -- " + message + "<br/> <br/> <br/> Your Form is Submited Successfully." +
+            "<br/>Thanks For Visiting..." + "<h3>&#128516;</h3>";
+
+        console.log(body);
+
+        Email.send({
+            SecureToken: "71ec2f6d-f0ba-483e-a60b-50acfedbbd76",
+            To: 'shivamwallu72594@gmail.com',
+            From: "shivamwallu72594@gmail.com",
+            Subject: "Contact Us",
+            Body: body1
+        })
+        Email.send({
+            SecureToken: "71ec2f6d-f0ba-483e-a60b-50acfedbbd76",
+            To: email,
+            From: "shivamwallu72594@gmail.com",
+            Subject: "Shivam Contact Us Form",
+            Body: body
+        }).then(
+            message => {
+            if (message === 'OK') {
+                swal("Successfull", "You Message Successfully Received", "success");
+                // Clear the input fields
+                document.getElementById("name").value = "";
+                document.getElementById("email").value = "";
+                document.getElementById("phone").value = "";
+                document.getElementById("message").value = "";
+            } else {
+                swal("Something Wrong", "You Message is Not Received", "error");
+            }
+            }
+        );
+        }
+
+
+        function startAutoTypingAnimation(elementId, delay = 100, restartDelay = 1000) {
+          const textElement = document.getElementById(elementId);
+          const textContent = textElement.textContent;
+          let index = 0;
+          let intervalId;
+
+          function typeText() {
+            textElement.textContent = textContent.substring(0, index);
+            index++;
+            if (index > textContent.length) {
+              clearInterval(intervalId);
+              setTimeout(() => {
+                index = 0;
+                textElement.textContent = ""; // Clear the text content
+                intervalId = setInterval(typeText, delay);
+              }, restartDelay);
+            }
+          }
+
+          intervalId = setInterval(typeText, delay);
+        }
+
+        startAutoTypingAnimation("gymTrainerText"); // Start the auto-typing animation
+</script>
+    </script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <script src="https://smtpjs.com/v3/smtp.js">
+</script>
+</body>
+</html>
